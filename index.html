@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Genius Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="m-4 "> 
+    <header></header>
+    <main class="">
+        <div class="flex justify-between">
+            <div class="flex-1 grid grid-cols-3 gap-4">
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                      <img src="images/triangle.png" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                      <h2 class="card-title">Triangle</h2>
+                      <p> Area (A) = 0.5 *  b * h </p>
+                      <div>
+                        <p><span>Triangle area is :</span> <span id="result">
+
+                        </span> <span>cm <sup>2</sup> </span> </p>
+                      </div>
+                      <div class="my-5">
+                        <input type="text" placeholder="b" id="baseInput"
+                        class="w-24 rounded-sm text-2xl p-1 border-2 border-gray-700">
+                        <span class="mr-2 ml-2">cm</span> 
+                        <input type="text" placeholder="h" id="heightInput"
+                         class="w-24 rounded-sm text-2xl p-1 border-2 border-gray-700">
+                        <span class="mr-2 ml-2">cm</span>
+                      </div>
+
+                      <div class="card-actions w-100 w-full">
+                        <button class="btn btn-primary w-full" onclick="triangle()">Calculate</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Rectangle Area -->
+                  <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                      <img src="images/rectangle.png" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                      <h2 class="card-title">Rectangle</h2>
+                      <p>Area (A) = w * I</p>
+                      <div>
+                        <p><span>Rectangle area is :</span> <span id="recResult"></span> <span>cm <sup>2</sup> </span> </p>
+                      </div>
+                      <div class="my-5">
+                        <input type="text" placeholder="w" id="widthInput"
+                        class="w-24 rounded-sm text-2xl p-1 border-2 border-gray-700">
+                        <span class="mr-2 ml-2">cm</span> 
+                        <input type="text" placeholder="l" id="lengthInput"
+                         class="w-24 rounded-sm text-2xl p-1 border-2 border-gray-700">
+                        <span class="mr-2 ml-2">cm</span>
+                      </div>
+                      <div class="card-actions w-100 w-full">
+                        <button class="btn btn-primary w-full" onclick="rectangle()">Calculate</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Parallelogram Area -->
+                  <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                      <img src="images/parallelogram.png" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                      <h2 class="card-title">Parallelogram</h2>
+                      <p>Area (A) = b * h</p>
+                      <div>
+                        <p><span>Triangle area is :</span> <span id="resultParall"></span> <span>cm <sup>2</sup> </span> </p>
+                      </div>
+                      <div class="my-5">
+                        <input type="text" placeholder="b" id="baseInputp"
+                        class="w-24 rounded-sm text-2xl p-1 border-2 border-gray-700">
+                        <span class="mr-2 ml-2">cm</span> 
+                        <input type="text" placeholder="h" id="heightInputp"
+                         class="w-24 rounded-sm text-2xl p-1 border-2 border-gray-700">
+                        <span class="mr-2 ml-2">cm</span>
+                      </div>
+                      <div class="card-actions w-full">
+                        <button class="btn btn-primary w-full" onclick="parallelorem()">Calculate</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Rhombus Area -->
+                  <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                      <img src="images/rhombus.png" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                      <h2 class="card-title">Rhombus</h2>
+                      <p>Area (A) =
+                        0.5 * <span>d <sub>1</sub></span> * <span>d <sub>2</sub> </span></p>
+                        <div>
+                          <p><span>Rhombus area is :</span> <span id="rhombusResult"></span> <span>cm <sup>2</sup> </span> </p>
+                        </div>
+                        <div class="my-5">
+                          <input type="text" placeholder="d1" id="d1Input"
+                          class="w-24 rounded-sm text-2xl p-1 border-2 border-gray-700">
+                          <span class="mr-2 ml-2">cm</span> 
+                          <input type="text" placeholder="d2" id="d2Input"
+                           class="w-24 rounded-sm text-2xl p-1 border-2 border-gray-700">
+                          <span class="mr-2 ml-2">cm</span>
+                        </div>
+                      <div class="card-actions w-full ">
+                        <button class="btn btn-primary w-full" onclick="rhombusCal()">Calculate</button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="w-72 text-center border-2 border-gray-300">
+                <h3 class="p-4" >Area Calculate</h3>
+                <p id="trianglePera"></p>
+            </div>
+        </div>
+      
+    </main>
+
+    <script src="script/triangle.js"></script>
+</body>
+</html>
